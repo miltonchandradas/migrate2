@@ -1,0 +1,31 @@
+<mvc:View controllerName="com.sap.migrate2.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:l="sap.ui.layout">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="Migrate 2 App...">
+					<content>
+						<Panel headerText="Northwind OData Service (Internet)" class="sapUiResponsiveMargin sapUiMediumMarginBottom" width="auto">
+							<content>
+								<l:VerticalLayout>
+									<List headerText="Products" items="{/Products}">
+										<StandardListItem title="{Name}" description="{Description}"/>
+									</List>
+								</l:VerticalLayout>
+							</content>
+						</Panel>
+						<Panel headerText="Sales OData Service (On-Premise)" class="sapUiResponsiveMargin sapUiMediumMarginBottom" width="auto">
+							<content>
+								<l:VerticalLayout>
+									<List items="{onpremModel>/Material}">
+										<StandardListItem title="{onpremModel>MaterialText}"></StandardListItem>
+									</List>
+								</l:VerticalLayout>
+							</content>
+						</Panel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
